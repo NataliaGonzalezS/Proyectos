@@ -1,0 +1,38 @@
+<h1>Directivas de atributo</h1>
+
+<p [ngStyle]="getStyle()">Un parrafo</p>
+
+<p [ngClass]="{letraRoja: true, centrado:centrado}">Otro párrafo</p>
+<button type="button" (click)="mover()">Mover texto</button>
+
+<p [appMarcar]="'red'">Texto marcado</p>
+<p [appMarcar]="'blue'">Texto marcado</p>
+
+<input appPowermode type="text">
+
+<h1>Directivas estructurales</h1>
+<p *ngIf="mostrar; else parteDeElse">Se muestra</p>
+<ng-template #parteDeElse>
+  <p>No se muestra nada</p>
+</ng-template>
+<button type="button" (click)="cambiarMostrar()">Mostrar</button>
+
+<div *ngIf="mostrar; then mostrarIf else mostrarElse"></div>
+<ng-template #mostrarIf>
+  <p>Se muestra el IF</p>
+</ng-template>
+<ng-template #mostrarElse>
+  <p>Se muestra el Else</p>
+</ng-template>
+
+<ul>
+  <li *ngFor="let item of items; let pos=index">{{pos}}:{{item}}</li>
+</ul>
+
+<div [ngSwitch]="mascota">
+  <p *ngSwitchCase="'perro'">Tengo un perro</p>
+  <p *ngSwitchCase="'gato'">Tengo un gato</p>
+  <p *ngSwitchDefault>No tengo ninguno</p>
+</div>
+
+<p *appUnless="mostrar">EL UNLESS</p>

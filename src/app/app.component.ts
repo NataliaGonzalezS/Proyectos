@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'the jungle';
+
+  mensajePadre;
+  mostrarMensaje(mensaje){
+
+    console.log(mensaje);
+    this.mensajePadre=mensaje;
+  }
+  
 }
+

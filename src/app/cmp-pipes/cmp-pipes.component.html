@@ -1,0 +1,33 @@
+<h1>Pipes</h1>
+<p>{{cadena}}</p>
+<p>{{cadena | uppercase }}</p>
+<p>{{cadena | lowercase }}</p>
+<p>{{cadena | slice:3 }}</p>
+<p>{{cadena | slice:3:5 }}</p>
+
+<p>{{num}}</p>
+<p>{{num | doble: 5:2}}</p>
+<p>{{num | currency:'EUR':'symbol'}}</p>
+<p>{{num | number: '1.2-2'}}</p>
+<p>{{fecha}}</p>
+<p>{{fecha | date}}</p>
+<p>{{fecha | date:'dd/MM/yy'}}</p>
+
+<p>{{holamundo|reverse}}</p>
+
+<p>{{cadena2|ocultar:"no": "*"}}</p>
+
+
+<input type="text" #input>
+<button type="button" (click)="addholamundo(input.value)">Añadir</button>
+<ul>
+  <li *ngFor="let holamundo of holamundo">{{holamundo}}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let holamundo of holamundo | filtro:'r'">{{holamundo}}</li>
+</ul>
+
+<h1>Pipe Async</h1>
+
+<p>Mensaje:{{mensaje|async}}</p>
